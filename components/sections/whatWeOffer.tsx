@@ -66,7 +66,7 @@ export default function WhatWeOffer() {
   }, []);
 
   return (
-    <section className="relative pt-16 pb-24 md:pt-24 md:pb-32 lg:pt-32 lg:pb-40 bg-[#0B0F19] text-white">
+    <section className="relative pt-16 pb-24 md:pt-24 md:pb-32 lg:pt-32 lg:pb-40 bg-[#0B0F19] text-white" id="services">
       {/* Background image overlay */}
       <div
         className="absolute inset-0 bg-[url('/images/what.webp')] bg-cover bg-center opacity-20 z-0"

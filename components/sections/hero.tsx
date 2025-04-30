@@ -34,7 +34,6 @@ const slides = [
   },
 ];
 
-
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -58,7 +57,7 @@ export default function Hero() {
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
+            index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
           }`}
         >
           {/* Background Image with Overlay */}
@@ -73,7 +72,7 @@ export default function Hero() {
           <div className="relative h-full flex items-center ml-10 md:ml-40 my-4 md:my-10">
             <div className="container mx-auto px-4 sm:px-6 md:px-12">
               <div className="max-w-4xl">
-                <p className="text-yellow-400 text-sm md:text-xl mb-12  md:mb-4 opacity-0 animate-[fadeIn_1s_ease-out_0.5s_forwards]">
+                <p className="text-yellow-400 text-sm md:text-xl mb-12 md:mb-4 opacity-0 animate-[fadeIn_1s_ease-out_0.5s_forwards]">
                   {slide.subtitle}
                 </p>
                 <h1 className="text-4xl leading-[1.2] md:text-[70px] md:leading-[84px] font-bold text-white mb-12 md:mb-8 opacity-0 animate-[fadeIn_1s_ease-out_0.7s_forwards]">
@@ -83,11 +82,19 @@ export default function Hero() {
                     </span>
                   ))}
                 </h1>
-                <div className="opacity-0 animate-[fadeIn_1s_ease-out_0.9s_forwards]">
+                <div className="opacity-0 animate-[fadeIn_1s_ease-out_0.9s_forwards] flex gap-4">
+                  {/* Get Started button */}
                   <Button 
                     className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-6 md:px-8 md:py-8 text-base md:text-lg"
                   >
                     Get Started
+                  </Button>
+
+                  {/* Brochure download button (outlined style) */}
+                  <Button
+                    className="border-2 border-gray-500 text-white bg-transparent hover:bg-white/10 hover:border-white px-6 py-6 md:px-8 md:py-8 text-base md:text-lg"
+                  >
+                    Download Brochure
                   </Button>
                 </div>
               </div>
@@ -97,7 +104,7 @@ export default function Hero() {
       ))}
 
       {/* Navigation Arrows - Made smaller on mobile */}
-      <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 flex flex-col space-y-2 md:space-y-4">
+      <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 flex flex-col space-y-2 md:space-y-4 z-20">
         <button
           onClick={prevSlide}
           className="p-2 md:p-3 my-2 md:my-4 bg-white/10 hover:bg-white/20 transition-colors"
@@ -113,7 +120,7 @@ export default function Hero() {
       </div>
 
       {/* Dots - Made smaller and closer to bottom on mobile */}
-      <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex space-x-1 md:space-x-2">
+      <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex space-x-1 md:space-x-2 z-20">
         {slides.map((_, index) => (
           <button
             key={index}
