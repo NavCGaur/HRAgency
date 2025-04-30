@@ -7,7 +7,7 @@ import { Toaster } from '@/components/ui/toaster';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Finagenc - Financial Services',
+  title: 'HR Agency - Consultancy Services',
   description: 'Professional financial services for individuals and businesses',
 };
 
